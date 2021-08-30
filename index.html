@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" /> -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Genshin Impact BP Planner</title>
+  </head>
+  <body>
+    <div class="mainHeader">
+      <div class="title">
+        <h2>Genshin Impact</h2>
+        <h1>BattlePass EP Planner</h1>
+      </div>
+      <div id="timeLeftContainer">Current period ends in 5d 5h 1m 22s</div>
+
+      <div class="bpSettings">
+        <label for="curLvl">Current Level</label>
+
+        <input
+          type="number"
+          name="curLvl"
+          id="curLvl"
+          placeholder="1"
+          min="1"
+          max="50"
+        />
+        <label for="curBp">BEP to next level</label>
+        <input
+          type="number"
+          name="curBp"
+          id="curBp"
+          placeholder="0"
+          min="0"
+          max="999"
+        />
+        <div class="bepCounter" id="goalBP">
+          <div class="bepText">50000</div>
+        </div>
+        <h3 class="toGoalLevel">to Goal</h3>
+      </div>
+      <!-- <div class="flex-break"></div> -->
+    </div>
+
+    <div class="main">
+      <div class="missionsContainer">
+        <div class="missionTabs">
+          <div class="missionTab active" id="dailyMissionTab">
+            Daily Missions
+          </div>
+          <div class="missionTab" id="weeklyMissionTab">Weekly Missions</div>
+          <div class="missionTab" id="periodMissionTab">BP Period Missions</div>
+        </div>
+        <div class="tab active" id="dailyMissions">
+          <ul class="missionList"></ul>
+        </div>
+
+        <div class="tab" id="weeklyMissions">
+          <ul class="missionList"></ul>
+        </div>
+
+        <div class="tab" id="periodMissions">
+          <ul class="missionList"></ul>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  --primary-color: rgb(255, 215, 120);
+  --primary-color-faded: rgb(255, 215, 120, 0.7);
+  --secondary-color: #75745a;
+  --header-height: 5.5rem;
+  --background-color: rgb(193, 165, 134);
+  --foreground-color: rgb(235, 226, 216);
+  --foreground-color-dark: #ccb59b;
+  --hover-color: #2098d1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url("./mountain-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.mainHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6); /* rgba(106, 90, 205, 0.6);*/
+  padding: 10px 30px;
+  height: var(--header-height);
+  color: var(--primary-color);
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+.mainHeader h1 {
+  letter-spacing: 0.1rem;
+  margin-left: 0;
+  margin: 0;
+}
+
+.mainHeader h2 {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.1rem;
+}
+
+.title {
+  width: 24rem;
+}
+
+.bpSettings {
+  padding: 5px;
+  height: 3.65rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.bpSettings input {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 5px 5px;
+  width: 5rem;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.bpSettings .bepCounter {
+  display: inline-block;
+  font-weight: initial;
+  margin: 0 15px 0 10px;
+}
+
+.bpSettings .bepCounter .bepText {
+  transform: translateX(-50.5%);
+}
+
+.bpSettings h3 {
+  font-size: 1rem;
+}
+
+.bepCounter {
+  height: 60px;
+  width: 60px;
+  position: relative;
+  background: url("./Item_Battle_Pass_EXP.png"),
+    linear-gradient(to bottom, rgb(112, 137, 168) 0%, rgb(104, 162, 194) 50%);
+  background-size: cover;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.bepCounter .bepText {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 1.2rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.missionTab {
+  display: inline-block;
+  position: relative;
+  background-color: var(--foreground-color-dark);
+  border: 1px solid var(--background-color);
+  padding: 5px 10px;
+  margin: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 0 -4px;
+  box-shadow: 0 -8px 10px 1px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 2;
+  border-bottom: none;
+}
+
+.missionTab:hover,
+.missionTab.active {
+  background-color: var(--foreground-color);
+  border: 1px solid var(--background-color);
+  border-bottom: none;
+
+  /* z-index: 5; */
+}
+
+.missionTab:last-child {
+  z-index: 1;
+}
+
+.missionTab:active {
+  transform: scale(0.98);
+}
+
+.missionTab:hover:before {
+  left: 0;
+  right: 0;
+}
+
+.missionTab:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  /* background: #2098d1; */
+  background: var(--secondary-color);
+  height: 2px;
+  transition-property: left, right;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+}
+
+.missionTab.active {
+  z-index: 5;
+}
+
+.missionTabs {
+  width: 100%;
+  max-width: 804px;
+}
+
+.main {
+  margin-top: var(--header-height);
+  padding: 0;
+  overflow-y: scroll;
+}
+
+.missionsContainer {
+  width: 100vw;
+  padding: 5px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.tab {
+  margin: 0;
+  padding: 0;
+}
+
+.missionList {
+  max-height: 0;
+  visibility: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(235, 226, 216);
+  max-width: 810px;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 -5px 10px 1px rgba(0, 0, 0, 0.3);
+  z-index: 5;
+}
+
+.tab.active .missionList {
+  max-height: 100%;
+  height: auto;
+  visibility: visible;
+}
+
+.missionList li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(235, 226, 216);
+  max-width: 800px;
+  width: calc(100vw - 40px);
+  margin: 5px 20px;
+  padding: 5px;
+  border-radius: 1px;
+  left: 0;
+  border: 1px solid rgb(193, 165, 134);
+  font-size: 1.5rem;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.missionList li:hover {
+  /* border: 1px solid var(--primary-color); */
+  background-color: rgb(247, 242, 232);
+  transform: scale(1.02);
+}
+
+.missionList li small {
+  margin-left: 5px;
+  font-weight: bold;
+  color: darkslategray;
+}
+
+@media (max-width: 1030px) {
+  :root {
+    --header-height: 7rem;
+  }
+  .mainHeader {
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: 5px 15px;
+  }
+
+  .mainHeader h1 {
+    font-size: 14px;
+  }
+  .mainHeader h2 {
+    font-size: 10px;
+  }
+}
