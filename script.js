@@ -15,7 +15,7 @@ const endTimeByTZ = {
 
 const endTime = new Date(endTimeByTZ["US"]);
 
-const curBEPEl = document.getElementById("curBp");
+const curBEPEl = document.getElementById("curBPInput");
 const curLvlEl = document.getElementById("curLvl");
 const dailyMissionList = document.querySelector("#dailyMissions .missionList");
 const weeklyMissionList = document.querySelector(

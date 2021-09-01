@@ -1,0 +1,22 @@
+{
+  "name": "genshin-bp-tracker",
+  "version": "1.0.0",
+  "description": "Planner for Maxing out BP Rewards in Mihoyo's Genshin Impact",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RParkerM/genshin-bp-planner.git"
+  },
+  "keywords": [
+    "genshin"
+  ],
+  "author": "Parker Mitchell",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/RParkerM/genshin-bp-planner/issues"
+  },
+  "homepage": "https://github.com/RParkerM/genshin-bp-planner#readme"
+}
